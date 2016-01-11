@@ -10,7 +10,7 @@ recipe            "streamingExperiment::experiment",  "configFile=; Experiment n
 
 
 depends "kagent"
-
+depends "apt"
 
 
 %w{ ubuntu debian rhel centos }.each do |os|
