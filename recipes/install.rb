@@ -7,7 +7,7 @@ user node[:streamingExperiment][:user] do
   supports :manage_home => true
   home "/home/#{node[:streamingExperiment][:user]}"
   shell "/bin/bash"
-  not_if "getent passwd #{node[streamingExperiment]['user']}"
+  not_if "getent passwd #{node[:streamingExperiment]['user']}"
 end
 
 group node[:streamingExperiment][:group] do
