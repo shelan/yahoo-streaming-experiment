@@ -12,3 +12,9 @@ user "root"
   EOM
 end
 
+ git "/tmp" do
+    repository "git://github.com/ashansa/streaming-benchmarks.git"
+    reference "master"
+    action :sync
+  end
+
