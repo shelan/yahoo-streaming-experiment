@@ -4,9 +4,10 @@ script 'run_experiment' do
   user node['streamingExperiment']['user']
   group node['streamingExperiment']['group']
   interpreter "bash"
+user "root"
   code <<-EOM
 echo "yahoo streaming benchmark"
-sudo apt-get install maven
+apt-get install maven -y
   EOM
 end
 
