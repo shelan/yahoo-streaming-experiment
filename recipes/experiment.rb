@@ -9,10 +9,11 @@ user "root"
     echo "yahoo streaming benchmark"
     apt-get install maven -y
     apt-get install leiningen -y
+    mkdir /tmp/streaming-benchmarks
   EOM
 end
 
- git "/tmp" do
+ git "/tmp/streaming-benchmarks" do
     repository "git://github.com/ashansa/streaming-benchmarks.git"
     reference "master"
     action :sync
