@@ -1,12 +1,12 @@
-name             'yahoo-streaming-experiment'
-maintainer       "yahoo-streaming-experiment"
+name             'streamingExperiment'
+maintainer       "streamingExperiment"
 maintainer_email "ashansa.perera@gmail.com"
 license          "Apache v2.0"
-description      'Installs/Configures/Runs yahoo-streaming-experiment'
+description      'Installs/Configures/Runs streamingExperiment'
 version          "0.1"
 
-recipe            "yahoo-streaming-experiment::install", "Experiment setup for yahoo-streaming-experiment"
-recipe            "yahoo-streaming-experiment::experiment",  "configFile=; Experiment name: experiment"
+recipe            "streamingExperiment::install", "Experiment setup for streamingExperiment"
+recipe            "streamingExperiment::experiment",  "configFile=; Experiment name: experiment"
 
 
 depends "kagent"
@@ -19,11 +19,11 @@ end
 
 
 
-attribute "yahoo-streaming-experiment/group",
+attribute "streamingExperiment/group",
 :description => "group parameter value",
 :type => "string"
 
-attribute "yahoo-streaming-experiment/user",
+attribute "streamingExperiment/user",
 :description => "user parameter value",
 :type => "string"
 

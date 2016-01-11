@@ -1,8 +1,8 @@
 
 script 'run_experiment' do
   cwd "/tmp"
-  user node['yahoo-streaming-experiment']['user']
-  group node['yahoo-streaming-experiment']['group']
+  user node['streamingExperiment']['user']
+  group node['streamingExperiment']['group']
   interpreter "bash"
   code <<-EOM
 echo "yahoo streaming benchmark"

@@ -1,8 +1,8 @@
 dependencies:
-  - recipe: yahoo-streaming-experiment::install
-  - recipe: yahoo-streaming-experiment::experiment
+  - recipe: streamingExperiment::install
+  - recipe: streamingExperiment::experiment
     local:
-      - yahoo-streaming-experiment::install
+      - streamingExperiment::install
     global:
 
 

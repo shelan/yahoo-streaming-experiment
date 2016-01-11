@@ -20,11 +20,11 @@ suites:
   - name: default
     run_list:
       - recipe[kagent::install]
-      - recipe[yahoo-streaming-experiment::install]
-      - recipe[yahoo-streaming-experiment::experiment]
+      - recipe[streamingExperiment::install]
+      - recipe[streamingExperiment::experiment]
 
     attributes:
-         yahoo-streaming-experiment:
+         streamingExperiment:
             experiment:
                 private_ips: ["10.0.2.15"]
                 public_ips: ["10.0.2.15"]
