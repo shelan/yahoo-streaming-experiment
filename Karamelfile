@@ -12,8 +12,5 @@ dependencies:
   - recipe: streamingExperiment::testSpark
     local:
       - streamingExperiment::setup
-  - recipe: streamingExperiment::testSpark
-    local:
-      - streamingExperiment::setup
 
 
