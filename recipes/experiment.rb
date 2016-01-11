@@ -6,8 +6,9 @@ script 'run_experiment' do
   interpreter "bash"
 user "root"
   code <<-EOM
-echo "yahoo streaming benchmark"
-apt-get install maven -y
+    echo "yahoo streaming benchmark"
+    apt-get install maven -y
+    apt-get install leiningen -y
   EOM
 end
 
