@@ -3,6 +3,14 @@ dependencies:
   - recipe: streamingExperiment::experiment
     local:
       - streamingExperiment::install
-    global:
+  - recipe: streamingExperiment::setup
+  	local:
+      - streamingExperiment::experiment
+  - recipe: streamingExperiment::testFlink
+  	local:
+      - streamingExperiment::setup
+  - recipe: streamingExperiment::testSpark
+  	local:
+      - streamingExperiment::setup
 
 

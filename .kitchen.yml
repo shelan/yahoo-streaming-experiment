@@ -23,19 +23,31 @@ suites:
       - recipe[apt::install]
       - recipe[streamingExperiment::install]
       - recipe[streamingExperiment::experiment]
+      - recipe[streamingExperiment::setup]
+      - recipe[streamingExperiment::testFlink]
+      - recipe[streamingExperiment::testSpark]
 
     attributes:
          streamingExperiment:
             experiment:
                 private_ips: ["10.0.2.15"]
                 public_ips: ["10.0.2.15"]
+            setup:
+              private_ips: ["10.0.2.15"]
+              public_ips: ["10.0.2.15"]
+            testFlink:
+              private_ips: ["10.0.2.15"]
+              public_ips: ["10.0.2.15"]
+            testSpark:
+              private_ips: ["10.0.2.15"]
+              public_ips: ["10.0.2.15"]
             private_ips: ["10.0.2.15"]
             public_ips: ["10.0.2.15"]
          kagent:
             private_ips: ["10.0.2.15"]
             public_ips: ["10.0.2.15"]
          apt:    
-	    private_ips: ["10.0.2.15"]
+	          private_ips: ["10.0.2.15"]
             public_ips: ["10.0.2.15"]
          private_ips: ["10.0.2.15"]
          public_ips: ["10.0.2.15"]
