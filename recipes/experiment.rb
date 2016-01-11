@@ -9,7 +9,7 @@ user "root"
     echo "yahoo streaming benchmark"
     apt-get install maven -y
     apt-get install leiningen -y
-    mkdir /tmp/streaming-benchmarks
+    mkdir -p /tmp/streaming-benchmarks
   EOM
 end
 
