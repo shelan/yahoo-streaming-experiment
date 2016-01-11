@@ -9,14 +9,8 @@ dependencies:
   - recipe: streamingExperiment::testFlink
     local:
       - streamingExperiment::setup
-  - recipe: streamingExperiment::setup
-  local:
-      - streamingExperiment::experiment
-  - recipe: streamingExperiment::testFlink
-  	local:
-      - streamingExperiment::setup
   - recipe: streamingExperiment::testSpark
-  	local:
+    local:
       - streamingExperiment::setup
 
 
