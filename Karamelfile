@@ -10,7 +10,7 @@ dependencies:
     local:
       - streamingExperiment::setup
   - recipe: streamingExperiment::testSpark
-    local:
+  local:
       - streamingExperiment::setup
 
 
