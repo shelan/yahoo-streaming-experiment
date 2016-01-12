@@ -1,4 +1,4 @@
-bash 'setup' do
+bash 'run_spark_test' do
   cwd "/tmp/streaming-benchmarks"
   code <<-EOM
     sh /tmp/streaming-benchmarks/stream-bench.sh SPARK_TEST
