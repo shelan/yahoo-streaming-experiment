@@ -1,4 +1,3 @@
-
 script 'run_experiment' do
   cwd "/tmp"
   user node['streamingExperiment']['user']
