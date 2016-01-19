@@ -93,6 +93,11 @@ create_kafka_topic() {
     fi
 }
 
+copy_files() {
+mkdir -p results
+cp data/updated.txt results/$LOAD-$1-updated.txt
+}
+
 run() {
   OPERATION=$1
   if [ "SETUP" = "$OPERATION" ];
@@ -265,6 +270,7 @@ run() {
     run "STOP_KAFKA"
     run "STOP_REDIS"
     run "STOP_ZK"
+    copy_files "flink"
   elif [ "SPARK_TEST" = "$OPERATION" ];
   then
     run "START_ZK"
@@ -280,6 +286,7 @@ run() {
     run "STOP_KAFKA"
     run "STOP_REDIS"
     run "STOP_ZK"
+    copy_files "spark"
   elif [ "STOP_ALL" = "$OPERATION" ];
   then
     run "STOP_LOAD"
