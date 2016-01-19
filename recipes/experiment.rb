@@ -19,3 +19,15 @@ end
     action :sync
   end
 
+file "/tmp/streaming-benchmarks/stream-bench.sh" do
+  owner node[:streamingExperiment][:user]
+  action :delete
+end
+
+template "/tmp/streaming-benchmarks/stream-bench.sh" do
+    source "stream-bench.sh.erb"
+    owner node[:streamingExperiment][:user]
+    group node[:streamingExperiment][:group]
+    mode 0775
+end
+

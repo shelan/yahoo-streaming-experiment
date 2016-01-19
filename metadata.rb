@@ -27,4 +27,20 @@ attribute "streamingExperiment/user",
 :description => "user parameter value",
 :type => "string"
 
+attribute "spark/home",
+:description => "path to spark home",
+:type => "string"
+
+attribute "spark/master/url",
+:description => "spark master url",
+:type => "string"
+
+attribute "flink/home",
+:description => "path to flink home",
+:type => "string"
+
+attribute "streamingExperiment/load",
+:description => "number of kafka event to be generated for a second",
+:type => "string"
+
 
