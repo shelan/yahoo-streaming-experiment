@@ -1,5 +1,4 @@
 script 'run_experiment' do
-  cwd "/tmp"
   user node['streamingExperiment']['user']
   group node['streamingExperiment']['group']
   
@@ -12,25 +11,25 @@ script 'run_experiment' do
   EOM
 end
 
-directory '/tmp/streaming-benchmarks' do
+directory 'streaming-benchmarks' do
   owner node['streamingExperiment']['user']
   group node['streamingExperiment']['group']
   mode '0755'
   action :create
 end
 
- git "/tmp/streaming-benchmarks" do
+ git "streaming-benchmarks" do
     repository "git://github.com/ashansa/streaming-benchmarks.git"
     reference "master"
     action :sync
   end
 
-file "/tmp/streaming-benchmarks/stream-bench.sh" do
+file "streaming-benchmarks/stream-bench.sh" do
   owner node[:streamingExperiment][:user]
   action :delete
 end
 
-template "/tmp/streaming-benchmarks/stream-bench.sh" do
+template "streaming-benchmarks/stream-bench.sh" do
     source "stream-bench.sh.erb"
     owner node[:streamingExperiment][:user]
     group node[:streamingExperiment][:group]
