@@ -14,7 +14,7 @@ end
 directory 'streaming-benchmarks' do
   owner node['streamingExperiment']['user']
   group node['streamingExperiment']['group']
-  mode '0755'
+  mode '0775'
   action :create
 end
 
