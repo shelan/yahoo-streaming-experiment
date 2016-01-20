@@ -1,8 +1,5 @@
-script 'run_experiment' do
-  user node['streamingExperiment']['user']
-  group node['streamingExperiment']['group']
-  
 
+  
 apt_package ['maven','leiningen'] do
   action :install
 end
