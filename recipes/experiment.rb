@@ -9,8 +9,14 @@ script 'run_experiment' do
     echo "yahoo streaming benchmark"
     apt-get install maven -y
     apt-get install leiningen -y
-    mkdir -p /tmp/streaming-benchmarks
   EOM
+end
+
+directory '/tmp/streaming-benchmarks' do
+  owner node['streamingExperiment']['user']
+  group node['streamingExperiment']['group']
+  mode '0755'
+  action :create
 end
 
  git "/tmp/streaming-benchmarks" do
