@@ -1,8 +1,10 @@
 
 bash 'setup' do
+  owner node[:streamingExperiment][:user]
+  group node[:streamingExperiment][:group]
   cwd "/tmp/streaming-benchmarks"
   code <<-EOM
-    sh /tmp/streaming-benchmarks/stream-bench.sh SETUP
+     ./stream-bench.sh SETUP
   EOM
 end
 
