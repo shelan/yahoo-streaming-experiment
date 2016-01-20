@@ -1,6 +1,8 @@
 bash 'run_spark_test' do
   cwd "/tmp/streaming-benchmarks"
+  owner node[:streamingExperiment][:user]
+  group node[:streamingExperiment][:group]
   code <<-EOM
-    sh /tmp/streaming-benchmarks/stream-bench.sh SPARK_TEST
+    ./stream-bench.sh SPARK_TEST
   EOM
 end
