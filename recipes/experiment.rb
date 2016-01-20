@@ -2,13 +2,9 @@ script 'run_experiment' do
   user node['streamingExperiment']['user']
   group node['streamingExperiment']['group']
   
-  interpreter "bash"
-  user "root"
-  code <<-EOM
-    echo "yahoo streaming benchmark"
-    apt-get install maven -y
-    apt-get install leiningen -y
-  EOM
+
+apt_package ['maven','leiningen'] do
+  action :install
 end
 
 directory 'streaming-benchmarks' do
