@@ -116,7 +116,7 @@ run() {
 	echo 'kafka.topic: "'$TOPIC'"' >> $CONF_FILE
 	echo 'kafka.partitions: '$PARTITIONS >> $CONF_FILE
 	echo 'process.hosts: 1' >> $CONF_FILE
-	echo 'process.cores: 2' >> $CONF_FILE
+	echo 'process.cores: <%= node[:cpu][:total] %>' >> $CONF_FILE
 	echo 'storm.workers: 1' >> $CONF_FILE
 	echo 'storm.ackers: 2' >> $CONF_FILE
 	echo 'spark.batchtime: 2000' >> $CONF_FILE
@@ -221,7 +221,7 @@ run() {
     sleep 10
   elif [ "START_SPARK_PROCESSING" = "$OPERATION" ];
   then
-    "$SPARK_DIR/bin/spark-submit" --master spark://172.28.128.5:7077 --class spark.benchmark.KafkaRedisAdvertisingStream ./spark-benchmarks/target/spark-benchmarks-0.1.0.jar "$CONF_FILE" &
+    "$SPARK_DIR/bin/spark-submit" --master <%= node[:spark][:master][:url] %> --class spark.benchmark.KafkaRedisAdvertisingStream ./spark-benchmarks/target/spark-benchmarks-0.1.0.jar "$CONF_FILE" &
     sleep 5
   elif [ "STOP_SPARK_PROCESSING" = "$OPERATION" ];
   then
