@@ -1,6 +1,8 @@
 bash 'run_flink_test' do
   cwd "/tmp/streaming-benchmarks"
+  owner node[:streamingExperiment][:user]
+  group node[:streamingExperiment][:group]
   code <<-EOM
-    sh /tmp/streaming-benchmarks/stream-bench.sh FLINK_TEST
+    ./stream-bench.sh FLINK_TEST
   EOM
 end
